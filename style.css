@@ -139,7 +139,7 @@ body::before {
     box-shadow: var(--shadow);
     border: 1px solid var(--gray-200);
     overflow: hidden;
-    width: 90%;
+    min-width: 100%; !important
     margin: 0 auto;
 }
 
@@ -171,7 +171,7 @@ body::before {
 /* Grid 3 colonnes optimisé */
 .form-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 3fr 1fr;
     gap: 1.5rem;
     width: 100%;
 }
