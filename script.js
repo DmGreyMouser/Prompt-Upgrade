@@ -1,181 +1,106 @@
-let currentFramework = '';
+function generateDescription() {
+    // Récupérer toutes les valeurs
+    const propertyType = document.getElementById('property-type').value;
+    const description = document.getElementById('description').value;
+    const city = document.getElementById('city').value;
+    const neighborhood = document.getElementById('neighborhood').value;
+    const bedrooms = document.getElementById('bedrooms').value;
+    const bathrooms = document.getElementById('bathrooms').value;
+    const surface = document.getElementById('surface').value;
+    const price = document.getElementById('price').value;
+    const features = document.getElementById('features').value;
+    const proximity = document.getElementById('proximity').value;
+    const tone = document.querySelector('input[name="tone"]:checked').value;
+    const targetAudience = document.getElementById('target-audience').value;
+    const centrisUrl = document.getElementById('centris-url').value;
 
-function selectFramework(framework) {
-    // Réinitialise tous les cards
-    document.querySelectorAll('.framework-card').forEach(card => {
-        card.classList.remove('active');
-    });
-    
-    // Cache tous les exemples
-    document.querySelectorAll('.example-section').forEach(section => {
-        section.classList.remove('active');
-    });
-    
-    // Active le card sélectionné
-    document.getElementById(framework + '-card').classList.add('active');
-    
-    // Montre l'exemple correspondant
-    document.getElementById(framework + '-example').classList.add('active');
-    
-    currentFramework = framework;
-    
-    // Met à jour le sélecteur
-    document.getElementById('framework-select').value = framework;
-    
-    // Scroll vers l'exemple
-    document.getElementById(framework + '-example').scrollIntoView({
-        behavior: 'smooth',
-        block: 'center'
-    });
-}
-
-function generatePrompt() {
-    const framework = document.getElementById('framework-select').value;
-    const topic = document.getElementById('topic-input').value;
-    const goal = document.getElementById('goal-input').value;
-    const context = document.getElementById('context-input').value;
-    
-    if (!framework || !topic) {
-        document.getElementById('generated-prompt').innerHTML = 
-            'Sélectionne un framework et indique le sujet pour générer ton prompt.';
-        document.getElementById('copy-btn').style.display = 'none';
+    // Validation des champs obligatoires
+    if (!propertyType || !description || !city || !neighborhood) {
+        alert('Veuillez remplir tous les champs obligatoires (*)');
         return;
     }
-    
-    let prompt = '';
-    
-    switch(framework) {
-        case 'context':
-            prompt = `**CONTEXTE :** ${context || 'Précise ton contexte'}
-**OBJECTIF :** ${goal || 'Définis ton objectif'}
-**NIVEAU :** Détaillé avec exemples concrets
-**TONE :** Professionnel et accessible
-**EXEMPLES :** Inclure des exemples pratiques
-**EXTRA :** [Ajoute tes contraintes spécifiques]
-**TÂCHE :** ${topic}`;
-            break;
-            
-        case 'star':
-            prompt = `**SITUATION :** ${context || 'Décris la situation actuelle'}
-**TÂCHE :** ${topic}
-**ACTION :** ${goal || 'Définis l\'action souhaitée'}
-**RÉSULTAT :** Format et livrables attendus`;
-            break;
-            
-        case 'clear':
-            prompt = `**CLARIFIER :** ${topic}
-**LIMITER :** [Définis les contraintes]
-**EXEMPLES :** Fournis des exemples concrets
-**ACTION :** ${goal || 'Action demandée'}
-**RÉSULTAT :** Format de sortie souhaité`;
-            break;
-            
-        case 'creative':
-            prompt = `**CRÉATIVITÉ :** Niveau élevé, innovations bienvenues
-**RESTRICTIONS :** [Tes limites ou guidelines]
-**EXPLORATION :** ${topic}
-**AUDIENCE :** [Définis ton public cible]
-**TYPE :** ${goal || 'Type de contenu souhaité'}
-**ÉVALUATION :** Critères de réussite`;
-            break;
-            
-        case 'problem':
-            prompt = `**SITUATION :** ${context || 'Problème actuel'}
-**OBSTACLES :** [Difficultés rencontrées]
-**LOGIQUE :** Approche méthodique et progressive
-**VARIABLES :** Facteurs à considérer
-**EXÉCUTION :** ${goal || 'Plan d\'action pour : ' + topic}`;
-            break;
-            
-        case 'learn':
-            prompt = `**LEVEL :** [Ton niveau actuel]
-**EXPLAIN :** ${topic}
-**APPROACH :** ${goal || 'Méthode d\'apprentissage pratique'}
-**RELEVANCE :** ${context || 'Application pratique'}
-**NEXT :** Étapes suivantes recommandées`;
-            break;
-    }
-    
-    document.getElementById('generated-prompt').innerHTML = prompt;
-    document.getElementById('copy-btn').style.display = 'inline-block';
+
+    // Générer le prompt
+    let prompt = `**TYPE DE PROPRIÉTÉ :** ${propertyType}
+**LOCALISATION :** ${neighborhood}, ${city}
+**DESCRIPTION DE BASE :** ${description}
+**TON :** ${tone}`;
+
+    if (bedrooms) prompt += `\n**CHAMBRES :** ${bedrooms}`;
+    if (bathrooms) prompt += `\n**SALLES DE BAIN :** ${bathrooms}`;
+    if (surface) prompt += `\n**SUPERFICIE :** ${surface} pi²`;
+    if (price) prompt += `\n**PRIX :** ${new Intl.NumberFormat('fr-CA', { style: 'currency', currency: 'CAD' }).format(price)}`;
+    if (features) prompt += `\n**CARACTÉRISTIQUES SPÉCIALES :** ${features}`;
+    if (proximity) prompt += `\n**PROXIMITÉ :** ${proximity}`;
+    if (targetAudience) prompt += `\n**PUBLIC CIBLE :** ${targetAudience}`;
+    if (centrisUrl) prompt += `\n**RÉFÉRENCE CENTRIS :** ${centrisUrl}`;
+
+    prompt += `\n\n**INSTRUCTION :**
+Rédige une description immobilière ${tone} et attrayante pour cette ${propertyType}. La description doit :
+- Mettre en valeur les points forts de la propriété
+- Adapter le langage au ton ${tone}
+- Être optimisée pour attirer ${targetAudience || 'les acheteurs potentiels'}
+- Inclure des détails sur la localisation et les commodités
+- Faire environ 150-200 mots
+- Utiliser un style qui incite à la visite`;
+
+    // Afficher le résultat
+    document.getElementById('placeholder').style.display = 'none';
+    document.getElementById('result-text').style.display = 'block';
+    document.getElementById('result-text').textContent = prompt;
+    document.getElementById('copy-btn').style.display = 'block';
+
+    // Animation
+    document.getElementById('result-text').classList.add('animate-up');
 }
 
-function copyPrompt() {
-    const promptText = document.getElementById('generated-prompt').textContent;
-    
-    // Créer un élément temporaire pour copier le texte
-    const tempElement = document.createElement('textarea');
-    tempElement.value = promptText;
-    document.body.appendChild(tempElement);
-    tempElement.select();
-    document.execCommand('copy');
-    document.body.removeChild(tempElement);
-    
-    // Feedback visuel
-    const copyBtn = document.getElementById('copy-btn');
-    const originalText = copyBtn.textContent;
-    copyBtn.textContent = '✅ Copié !';
-    copyBtn.style.background = 'linear-gradient(135deg, #27ae60, #2ecc71)';
-    
-    setTimeout(() => {
-        copyBtn.textContent = originalText;
-        copyBtn.style.background = 'linear-gradient(135deg, var(--accent-color), var(--accent-hover))';
-    }, 2000);
-}
-
-// Mise à jour du générateur quand on change le framework
-document.addEventListener('DOMContentLoaded', function() {
-    document.getElementById('framework-select').addEventListener('change', function() {
-        if (this.value) {
-            selectFramework(this.value);
-        }
-    });
-    
-    // Animation d'entrée pour les cards
-    const cards = document.querySelectorAll('.framework-card');
-    cards.forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(20px)';
+function copyDescription() {
+    const resultText = document.getElementById('result-text').textContent;
+    navigator.clipboard.writeText(resultText).then(() => {
+        const copyBtn = document.getElementById('copy-btn');
+        copyBtn.textContent = '✅ Copié !';
+        copyBtn.classList.add('success');
+        
         setTimeout(() => {
-            card.style.transition = 'all 0.5s ease';
-            card.style.opacity = '1';
-            card.style.transform = 'translateY(0)';
+            copyBtn.textContent = '📋 Copier';
+            copyBtn.classList.remove('success');
+        }, 2000);
+    });
+}
+
+// Animation d'entrée pour les éléments
+document.addEventListener('DOMContentLoaded', function() {
+    // Animation pour les champs de formulaire
+    const fieldGroups = document.querySelectorAll('.field-group');
+    fieldGroups.forEach((group, index) => {
+        group.style.opacity = '0';
+        group.style.transform = 'translateY(20px)';
+        setTimeout(() => {
+            group.style.transition = 'all 0.5s ease';
+            group.style.opacity = '1';
+            group.style.transform = 'translateY(0)';
         }, index * 100);
     });
 });
 
-// Support pour mobile - améliore l'UX tactile
+// Support amélioré pour mobile
 document.addEventListener('DOMContentLoaded', function() {
-    // Ajoute une classe pour les appareils tactiles
+    // Détection tactile
     if ('ontouchstart' in window) {
         document.body.classList.add('touch-device');
     }
     
-    // Améliore le scroll sur mobile
-    const examples = document.querySelectorAll('.example-section');
-    examples.forEach(example => {
-        example.addEventListener('touchstart', function() {
-            // Améliore la réactivité tactile
+    // Amélioration UX pour les champs de saisie sur mobile
+    const inputs = document.querySelectorAll('.input');
+    inputs.forEach(input => {
+        input.addEventListener('focus', function() {
+            // Scroll vers l'input pour éviter que le clavier le cache
+            setTimeout(() => {
+                this.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }, 300);
         });
     });
-});
-
-// Fonction pour changer de thème (bonus pour plus tard)
-function toggleTheme() {
-    const body = document.body;
-    const currentTheme = body.getAttribute('data-theme');
-    
-    if (currentTheme === 'dark') {
-        body.setAttribute('data-theme', 'light');
-        localStorage.setItem('theme', 'light');
-    } else {
-        body.setAttribute('data-theme', 'dark');
-        localStorage.setItem('theme', 'dark');
-    }
-}
-
-// Charge le thème sauvegardé (bonus pour plus tard)
-document.addEventListener('DOMContentLoaded', function() {
-    const savedTheme = localStorage.getItem('theme') || 'light';
-    document.body.setAttribute('data-theme', savedTheme);
 });
