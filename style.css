@@ -138,6 +138,12 @@ body::before {
 }
 
 /* Panel formulaire - 100% width */
+form, .form-group, input, select, textarea {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
 .form-panel {
     background: white;
     border-radius: var(--radius);
