@@ -3,207 +3,668 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Prompt-Upgrade - Guide Interactif pour Prompts AI</title>
-    <link rel="stylesheet" href="style.css">
-    <meta name="description" content="Guide interactif avec 6 cadres de narration pour créer des prompts AI efficaces">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+    <title>RealtorTools - Descriptions Immobilières</title>
+    <script src="https://kit.fontawesome.com/FAPS-GQMK-CQTJ-EEBQ-6539.js" crossorigin="anonymous"></script>
+    <style>
+        /* Variables CSS modernes */
+        :root {
+            --primary: #6366f1;
+            --primary-light: #818cf8;
+            --secondary: #f59e0b;
+            --dark: #0f172a;
+            --gray-50: #f8fafc;
+            --gray-100: #f1f5f9;
+            --gray-200: #e2e8f0;
+            --gray-300: #cbd5e1;
+            --gray-400: #94a3b8;
+            --gray-500: #64748b;
+            --gray-600: #475569;
+            --gray-700: #334155;
+            --gray-800: #1e293b;
+            --gray-900: #0f172a;
+            --success: #10b981;
+            --error: #ef4444;
+            --warning: #f59e0b;
+            --radius: 12px;
+            --shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+            --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: linear-gradient(135deg, var(--gray-50) 0%, var(--gray-100) 100%);
+            color: #000000;
+            line-height: 1.6;
+            margin: 0;
+            padding: 40px;
+        }
+
+        /* Container principal avec bordure et centrage */
+        .main-wrapper {
+            max-width: calc(100% - 80px);
+            margin: 0 auto;
+            background: white;
+            border: 3px solid #ea0029;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Header moderne */
+        .header {
+            background: white;
+            border-bottom: 1px solid var(--gray-200);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.9);
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: between;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--primary);
+            text-decoration: none;
+        }
+
+        .badge {
+            background: var(--success);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-left: 1rem;
+        }
+
+        /* Layout principal */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        .hero {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: var(--gray-900);
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Layout en grid moderne */
+        .main-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: start;
+        }
+
+        /* Panel de gauche - Formulaire */
+        .form-panel {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--gray-200);
+            overflow: hidden;
+        }
+
+        .form-header {
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+        }
+
+        .form-header h2 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--gray-900);
+            margin-bottom: 0.5rem;
+        }
+
+        .form-header p {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+        }
+
+        .form-content {
+            padding: 1.5rem;
+            space-y: 1.5rem;
+        }
+
+        /* Groupes de champs */
+        .field-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .field-group:last-child {
+            margin-bottom: 0;
+        }
+
+        .group-title {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--gray-700);
+            margin-bottom: 1rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--primary);
+            display: inline-block;
+        }
+
+        /* Champs de formulaire modernes */
+        .input-group {
+            margin-bottom: 1rem;
+        }
+
+        .input-label {
+            display: block;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            margin-bottom: 0.5rem;
+        }
+
+        .input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius);
+            font-size: 1rem;
+            transition: all 0.2s ease;
+            background: white;
+        }
+
+        .input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgb(99 102 241 / 0.1);
+        }
+
+        .textarea {
+            min-height: 100px;
+            resize: vertical;
+        }
+
+        /* Select personnalisé */
+        .select {
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3E%3C/svg%3E");
+            background-position: right 0.75rem center;
+            background-repeat: no-repeat;
+            background-size: 1rem;
+            padding-right: 3rem;
+        }
+
+        /* Toggle switches modernes */
+        .toggle-group {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            gap: 0.75rem;
+        }
+
+        .toggle-option {
+            position: relative;
+        }
+
+        .toggle-option input {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .toggle-label {
+            display: block;
+            padding: 0.75rem 1rem;
+            background: var(--gray-50);
+            border: 2px solid var(--gray-200);
+            border-radius: var(--radius);
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-600);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .toggle-option input:checked + .toggle-label {
+            background: var(--primary);
+            border-color: var(--primary);
+            color: white;
+        }
+
+        /* Bouton principal */
+        .generate-btn {
+            width: 100%;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            border: none;
+            padding: 1rem 2rem;
+            border-radius: var(--radius);
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            margin-top: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .generate-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .generate-btn:active {
+            transform: translateY(0);
+        }
+
+        /* Panel de droite - Résultat */
+        .result-panel {
+            background: white;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            border: 1px solid var(--gray-200);
+            overflow: hidden;
+            position: sticky;
+            top: 6rem;
+        }
+
+        .result-header {
+            background: var(--gray-50);
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--gray-200);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .result-header h2 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--gray-900);
+        }
+
+        .copy-btn {
+            background: var(--gray-100);
+            border: 1px solid var(--gray-200);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--gray-700);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: none;
+        }
+
+        .copy-btn:hover {
+            background: var(--gray-200);
+        }
+
+        .copy-btn.success {
+            background: var(--success);
+            color: white;
+            border-color: var(--success);
+        }
+
+        .result-content {
+            padding: 1.5rem;
+        }
+
+        .result-placeholder {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--gray-400);
+            font-style: italic;
+        }
+
+        .result-text {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--gray-800);
+            white-space: pre-wrap;
+            display: none;
+        }
+
+        /* Responsive pour la boite centrée */
+        @media (max-width: 768px) {
+            body {
+                padding: 20px;
+            }
+            
+            .main-wrapper {
+                max-width: calc(100% - 40px);
+            }
+            
+            .main-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .result-panel {
+                position: static;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .toggle-group {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Animations */
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-up {
+            animation: slideUp 0.5s ease;
+        }
+
+        /* Style pour les champs optionnels */
+        .optional {
+            position: relative;
+        }
+
+        .optional::after {
+            content: "Optionnel";
+            position: absolute;
+            top: 0;
+            right: 0;
+            font-size: 0.75rem;
+            color: var(--gray-400);
+            background: var(--gray-50);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+    </style>
 </head>
 <body>
+    <div class="main-wrapper">
+        <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo"><i class="fa-regular fa-house"></i> RealtorTools</a>
+            <span class="badge">100% Gratuit</span>
+        </div>
+    </header>
+
     <div class="container">
-        <header>
-            <h1>🎯 Prompt-Upgrade</h1>
-            <p class="subtitle">Guide Interactif pour Prompts AI Efficaces</p>
-            <div class="github-link">
-                <a href="https://github.com/DmGreyMouser/Prompt-Upgrade" target="_blank">⭐ GitHub</a>
-            </div>
-        </header>
-        
-        <div class="framework-grid">
-            <div class="framework-card" onclick="selectFramework('context')" id="context-card">
-                <div class="framework-title">
-                    <span class="icon">🎯</span>
-                    CONTEXT (Cadre de Base)
-                </div>
-                <ul class="framework-steps">
-                    <li><strong>C</strong>ontexte : Qui es-tu ? Quel est le contexte ?</li>
-                    <li><strong>O</strong>bjectif : Que veux-tu accomplir ?</li>
-                    <li><strong>N</strong>iveau : Quel niveau de détail ?</li>
-                    <li><strong>T</strong>one : Quel ton adopter ?</li>
-                    <li><strong>E</strong>xemples : Donne des exemples si besoin</li>
-                    <li><strong>X</strong>tra : Contraintes ou précisions</li>
-                    <li><strong>T</strong>âche : Action finale claire</li>
-                </ul>
-            </div>
-            
-            <div class="framework-card" onclick="selectFramework('star')" id="star-card">
-                <div class="framework-title">
-                    <span class="icon">⭐</span>
-                    STAR (Situation-Action)
-                </div>
-                <ul class="framework-steps">
-                    <li><strong>S</strong>ituation : Décris le contexte actuel</li>
-                    <li><strong>T</strong>âche : Définis la tâche précise</li>
-                    <li><strong>A</strong>ction : Quelle action veux-tu ?</li>
-                    <li><strong>R</strong>ésultat : Quel résultat attendu ?</li>
-                </ul>
-            </div>
-            
-            <div class="framework-card" onclick="selectFramework('clear')" id="clear-card">
-                <div class="framework-title">
-                    <span class="icon">💡</span>
-                    CLEAR (Clarté Maximum)
-                </div>
-                <ul class="framework-steps">
-                    <li><strong>C</strong>larifier : Énonce clairement le problème</li>
-                    <li><strong>L</strong>imiter : Définis les limites/contraintes</li>
-                    <li><strong>E</strong>xemples : Fournis des exemples concrets</li>
-                    <li><strong>A</strong>ction : Décris l'action attendue</li>
-                    <li><strong>R</strong>ésultat : Spécifie le format de sortie</li>
-                </ul>
-            </div>
-            
-            <div class="framework-card" onclick="selectFramework('creative')" id="creative-card">
-                <div class="framework-title">
-                    <span class="icon">🎨</span>
-                    CREATE (Créativité)
-                </div>
-                <ul class="framework-steps">
-                    <li><strong>C</strong>réativité : Niveau de créativité souhaité</li>
-                    <li><strong>R</strong>estrictions : Limites ou guidelines</li>
-                    <li><strong>E</strong>xploration : Domaines à explorer</li>
-                    <li><strong>A</strong>udience : Public cible</li>
-                    <li><strong>T</strong>ype : Type de contenu désiré</li>
-                    <li><strong>E</strong>valuation : Critères de réussite</li>
-                </ul>
-            </div>
-            
-            <div class="framework-card" onclick="selectFramework('problem')" id="problem-card">
-                <div class="framework-title">
-                    <span class="icon">🔧</span>
-                    SOLVE (Résolution de Problèmes)
-                </div>
-                <ul class="framework-steps">
-                    <li><strong>S</strong>ituation : État actuel du problème</li>
-                    <li><strong>O</strong>bstacles : Difficultés rencontrées</li>
-                    <li><strong>L</strong>ogique : Approche logique souhaitée</li>
-                    <li><strong>V</strong>ariables : Facteurs à considérer</li>
-                    <li><strong>E</strong>xécution : Plan d'action demandé</li>
-                </ul>
-            </div>
-            
-            <div class="framework-card" onclick="selectFramework('learn')" id="learn-card">
-                <div class="framework-title">
-                    <span class="icon">📚</span>
-                    LEARN (Apprentissage)
-                </div>
-                <ul class="framework-steps">
-                    <li><strong>L</strong>evel : Niveau de connaissance actuel</li>
-                    <li><strong>E</strong>xplain : Que veux-tu apprendre ?</li>
-                    <li><strong>A</strong>pproach : Méthode d'apprentissage</li>
-                    <li><strong>R</strong>elevance : Pertinence/application</li>
-                    <li><strong>N</strong>ext : Prochaines étapes</li>
-                </ul>
-            </div>
-        </div>
-        
-        <!-- Sections d'exemples -->
-        <div id="context-example" class="example-section">
-            <div class="example-title">📝 Exemple avec CONTEXT :</div>
-            <div class="example-content">C - Contexte : Je suis étudiant en marketing digital
-O - Objectif : Créer une stratégie de contenu pour Instagram
-N - Niveau : Guide détaillé avec étapes concrètes
-T - Tone : Professionnel mais accessible
-E - Exemples : Inclure 3 exemples de posts types
-X - Extra : Budget limité, audience 18-35 ans
-T - Tâche : Rédige un plan de contenu sur 30 jours</div>
-        </div>
-        
-        <div id="star-example" class="example-section">
-            <div class="example-title">📝 Exemple avec STAR :</div>
-            <div class="example-content">S - Situation : Mon site e-commerce a un taux de conversion de 1,2%
-T - Tâche : Améliorer le taux de conversion
-A - Action : Analyse les pages produits et propose 5 améliorations
-R - Résultat : Liste priorisée avec impact estimé pour chaque amélioration</div>
-        </div>
-        
-        <div id="clear-example" class="example-section">
-            <div class="example-title">📝 Exemple avec CLEAR :</div>
-            <div class="example-content">C - Clarifier : Je veux améliorer mes présentations PowerPoint
-L - Limiter : Présentations business, 10-15 slides maximum
-E - Exemples : Inclure 2 templates de slides différents
-A - Action : Crée un guide de bonnes pratiques
-R - Résultat : Document PDF avec checklist et templates</div>
-        </div>
-        
-        <div id="creative-example" class="example-section">
-            <div class="example-title">📝 Exemple avec CREATE :</div>
-            <div class="example-content">C - Créativité : Très créatif, sortir des sentiers battus
-R - Restrictions : Respecter l'identité de marque, rester professionnel
-E - Exploration : Marketing viral, storytelling, expériences interactives
-A - Audience : Millennials tech-savvy, urbains
-T - Type : Campagne publicitaire multi-canal
-E - Évaluation : Originalité, mémorabilité, faisabilité</div>
-        </div>
-        
-        <div id="problem-example" class="example-section">
-            <div class="example-title">📝 Exemple avec SOLVE :</div>
-            <div class="example-content">S - Situation : Équipe remote avec problèmes de communication
-O - Obstacles : Fuseaux horaires, outils dispersés, manque de clarté
-L - Logique : Approche systémique et progressive
-V - Variables : Taille équipe (8 personnes), budget, outils existants
-E - Exécution : Plan d'action sur 3 mois avec métriques de suivi</div>
-        </div>
-        
-        <div id="learn-example" class="example-section">
-            <div class="example-title">📝 Exemple avec LEARN :</div>
-            <div class="example-content">L - Level : Débutant en Python, bases de programmation OK
-E - Explain : Apprendre l'analyse de données avec pandas
-A - Approach : Apprentissage pratique avec projets concrets
-R - Relevance : Pour analyser mes données de ventes e-commerce
-N - Next : Après pandas, passer à la visualisation avec matplotlib</div>
-        </div>
-        
-        <div class="interactive-prompt">
-            <h3>🚀 Générateur de Prompt Interactif</h3>
-            <div class="prompt-builder">
-                <select id="framework-select" class="prompt-input">
-                    <option value="">Choisis un framework...</option>
-                    <option value="context">CONTEXT</option>
-                    <option value="star">STAR</option>
-                    <option value="clear">CLEAR</option>
-                    <option value="creative">CREATE</option>
-                    <option value="problem">SOLVE</option>
-                    <option value="learn">LEARN</option>
-                </select>
-                
-                <input type="text" id="topic-input" class="prompt-input" placeholder="Sujet de ton prompt...">
-                <input type="text" id="goal-input" class="prompt-input" placeholder="Objectif principal...">
-                <input type="text" id="context-input" class="prompt-input" placeholder="Contexte/Situation...">
-                
-                <button onclick="generatePrompt()">Générer le Prompt</button>
-                <button onclick="copyPrompt()" id="copy-btn" style="display:none;">📋 Copier</button>
-                
-                <div id="generated-prompt" class="prompt-output">
-                    Ton prompt généré apparaîtra ici...
-                </div>
-            </div>
-        </div>
-        
-        <div class="tip-box">
-            <div class="tip-title">💡 Conseils pour des Prompts Efficaces :</div>
-            <p><strong>• Sois spécifique :</strong> Plus tu es précis, meilleure sera la réponse<br>
-            <strong>• Utilise des exemples :</strong> Montre ce que tu veux obtenir<br>
-            <strong>• Définis le format :</strong> Liste, paragraphe, tableau, etc.<br>
-            <strong>• Indique le niveau :</strong> Expert, débutant, intermédiaire<br>
-            <strong>• Précise le ton :</strong> Formel, casual, technique, créatif</p>
+        <div class="hero">
+            <h1>Descriptions Immobilières de Première Qualité</h1>
+            <p>Créez des prompts personnalisés pour générer des descriptions immobilières percutantes qui vendent vos propriétés.</p>
         </div>
 
-        <footer>
-            <p>Créé avec ❤️ pour améliorer la communication avec l'IA</p>
-            <p><a href="https://github.com/DmGreyMouser/Prompt-Upgrade" target="_blank">Contribuer sur GitHub</a></p>
-        </footer>
+        <div class="main-grid">
+            <!-- Panel de gauche - Formulaire -->
+            <div class="form-panel">
+                <div class="form-header">
+                    <h2>Détails de la propriété</h2>
+                    <p>Remplissez les informations pour générer une description optimisée</p>
+                </div>
+                
+                <div class="form-content">
+                    <!-- Informations de base -->
+                    <div class="field-group">
+                        <div class="group-title">📋 Informations de base</div>
+                        
+                        <div class="input-group">
+                            <label class="input-label">Type de propriété *</label>
+                            <select class="input select" id="property-type" required>
+                                <option value="">Sélectionnez le type</option>
+                                <option value="maison unifamiliale">Maison unifamiliale</option>
+                                <option value="condo">Condo/Appartement</option>
+                                <option value="duplex">Duplex/Triplex</option>
+                                <option value="maison de ville">Maison de ville</option>
+                                <option value="terrain">Terrain</option>
+                                <option value="commercial">Commercial</option>
+                                <option value="chalet">Chalet/Résidence secondaire</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Description courte *</label>
+                            <textarea class="input textarea" id="description" placeholder="Ex: Magnifique propriété récemment rénovée avec vue sur le fleuve..." required></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Localisation -->
+                    <div class="field-group">
+                        <div class="group-title">📍 Localisation</div>
+                        
+                        <div class="input-group">
+                            <label class="input-label">Ville *</label>
+                            <input type="text" class="input" id="city" placeholder="Ex: Montréal" required>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Quartier/Secteur *</label>
+                            <input type="text" class="input" id="neighborhood" placeholder="Ex: Plateau Mont-Royal" required>
+                        </div>
+                    </div>
+
+                    <!-- Détails techniques -->
+                    <div class="field-group">
+                        <div class="group-title">🏠 Détails techniques</div>
+                        
+                        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                            <div class="input-group">
+                                <label class="input-label">Chambres</label>
+                                <input type="number" class="input" id="bedrooms" placeholder="3" min="0">
+                            </div>
+                            <div class="input-group">
+                                <label class="input-label">Salles de bain</label>
+                                <input type="number" class="input" id="bathrooms" placeholder="2" min="0" step="0.5">
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Superficie (pi²)</label>
+                            <input type="number" class="input" id="surface" placeholder="1500">
+                        </div>
+
+                        <div class="input-group optional">
+                            <label class="input-label">Prix ($)</label>
+                            <input type="number" class="input" id="price" placeholder="425000">
+                        </div>
+                    </div>
+
+                    <!-- Caractéristiques spéciales -->
+                    <div class="field-group">
+                        <div class="group-title">✨ Points forts</div>
+                        
+                        <div class="input-group">
+                            <label class="input-label">Caractéristiques spéciales</label>
+                            <textarea class="input" id="features" placeholder="Ex: Cuisine rénovée, foyer au bois, garage double, piscine creusée..."></textarea>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Proximité/Transport</label>
+                            <input type="text" class="input" id="proximity" placeholder="Ex: Près du métro, écoles primaires, centre commercial">
+                        </div>
+                    </div>
+
+                    <!-- Paramètres marketing -->
+                    <div class="field-group">
+                        <div class="group-title">🎯 Marketing</div>
+                        
+                        <div class="input-group">
+                            <label class="input-label">Ton de la description</label>
+                            <div class="toggle-group">
+                                <div class="toggle-option">
+                                    <input type="radio" name="tone" value="professionnel" id="tone-pro" checked>
+                                    <label class="toggle-label" for="tone-pro">Professionnel</label>
+                                </div>
+                                <div class="toggle-option">
+                                    <input type="radio" name="tone" value="vendeur" id="tone-sales">
+                                    <label class="toggle-label" for="tone-sales">Vendeur</label>
+                                </div>
+                                <div class="toggle-option">
+                                    <input type="radio" name="tone" value="accueillant" id="tone-warm">
+                                    <label class="toggle-label" for="tone-warm">Accueillant</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="input-group">
+                            <label class="input-label">Public cible</label>
+                            <select class="input select" id="target-audience">
+                                <option value="">Sélectionnez le public</option>
+                                <option value="famille">Famille</option>
+                                <option value="jeune couple">Jeune couple</option>
+                                <option value="investisseur">Investisseur</option>
+                                <option value="premier acheteur">Premier acheteur</option>
+                                <option value="retraité">Retraité</option>
+                                <option value="professionnel">Professionnel</option>
+                            </select>
+                        </div>
+
+                        <div class="input-group optional">
+                            <label class="input-label">URL Centris</label>
+                            <input type="url" class="input" id="centris-url" placeholder="https://www.centris.ca/...">
+                        </div>
+                    </div>
+
+                    <button class="generate-btn" onclick="generateDescription()">
+                        🚀 Générer la Description
+                    </button>
+                </div>
+            </div>
+
+            <!-- Panel de droite - Résultat -->
+            <div class="result-panel">
+                <div class="result-header">
+                    <h2>Description générée</h2>
+                    <button class="copy-btn" id="copy-btn" onclick="copyDescription()">
+                        📋 Copier
+                    </button>
+                </div>
+                
+                <div class="result-content">
+                    <div class="result-placeholder" id="placeholder">
+                        <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" style="margin-bottom: 1rem;">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
+                            <polyline points="14,2 14,8 20,8"/>
+                            <line x1="16" y1="13" x2="8" y2="13"/>
+                            <line x1="16" y1="17" x2="8" y2="17"/>
+                            <polyline points="10,9 9,9 8,9"/>
+                        </svg>
+                        <p>Remplissez les champs et cliquez sur "Générer" pour voir votre description optimisée apparaître ici.</p>
+                    </div>
+                    <div class="result-text" id="result-text"></div>
+                </div>
+            </div>
+        </div>
     </div>
-    
-    <script src="script.js"></script>
+
+    <script>
+        function generateDescription() {
+            // Récupérer toutes les valeurs
+            const propertyType = document.getElementById('property-type').value;
+            const description = document.getElementById('description').value;
+            const city = document.getElementById('city').value;
+            const neighborhood = document.getElementById('neighborhood').value;
+            const bedrooms = document.getElementById('bedrooms').value;
+            const bathrooms = document.getElementById('bathrooms').value;
+            const surface = document.getElementById('surface').value;
+            const price = document.getElementById('price').value;
+            const features = document.getElementById('features').value;
+            const proximity = document.getElementById('proximity').value;
+            const tone = document.querySelector('input[name="tone"]:checked').value;
+            const targetAudience = document.getElementById('target-audience').value;
+            const centrisUrl = document.getElementById('centris-url').value;
+
+            // Validation des champs obligatoires
+            if (!propertyType || !description || !city || !neighborhood) {
+                alert('Veuillez remplir tous les champs obligatoires (*)');
+                return;
+            }
+
+            // Générer le prompt
+            let prompt = `**TYPE DE PROPRIÉTÉ :** ${propertyType}
+**LOCALISATION :** ${neighborhood}, ${city}
+**DESCRIPTION DE BASE :** ${description}
+**TON :** ${tone}`;
+
+            if (bedrooms) prompt += `\n**CHAMBRES :** ${bedrooms}`;
+            if (bathrooms) prompt += `\n**SALLES DE BAIN :** ${bathrooms}`;
+            if (surface) prompt += `\n**SUPERFICIE :** ${surface} pi²`;
+            if (price) prompt += `\n**PRIX :** ${new Intl.NumberFormat('fr-CA', { style: 'currency', currency: 'CAD' }).format(price)}`;
+            if (features) prompt += `\n**CARACTÉRISTIQUES SPÉCIALES :** ${features}`;
+            if (proximity) prompt += `\n**PROXIMITÉ :** ${proximity}`;
+            if (targetAudience) prompt += `\n**PUBLIC CIBLE :** ${targetAudience}`;
+            if (centrisUrl) prompt += `\n**RÉFÉRENCE CENTRIS :** ${centrisUrl}`;
+
+            prompt += `\n\n**INSTRUCTION :**
+Rédige une description immobilière ${tone} et attrayante pour cette ${propertyType}. La description doit :
+- Mettre en valeur les points forts de la propriété
+- Adapter le langage au ton ${tone}
+- Être optimisée pour attirer ${targetAudience || 'les acheteurs potentiels'}
+- Inclure des détails sur la localisation et les commodités
+- Faire environ 150-200 mots
+- Utiliser un style qui incite à la visite`;
+
+            // Afficher le résultat
+            document.getElementById('placeholder').style.display = 'none';
+            document.getElementById('result-text').style.display = 'block';
+            document.getElementById('result-text').textContent = prompt;
+            document.getElementById('copy-btn').style.display = 'block';
+
+            // Animation
+            document.getElementById('result-text').classList.add('animate-up');
+        }
+
+        function copyDescription() {
+            const resultText = document.getElementById('result-text').textContent;
+            navigator.clipboard.writeText(resultText).then(() => {
+                const copyBtn = document.getElementById('copy-btn');
+                copyBtn.textContent = '✅ Copié !';
+                copyBtn.classList.add('success');
+                
+                setTimeout(() => {
+                    copyBtn.textContent = '📋 Copier';
+                    copyBtn.classList.remove('success');
+                }, 2000);
+            });
+        }
+    </script>
 </body>
 </html>
