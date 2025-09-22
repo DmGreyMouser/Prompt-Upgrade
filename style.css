@@ -79,13 +79,13 @@ body::before {
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--primary);
+    color: var(--secondary);
     text-decoration: none;
     transition: var(--transition);
 }
 
 .logo:hover {
-    color: var(--primary-light);
+    color: var(--succes);
 }
 
 .badge {
