@@ -78,12 +78,13 @@ body::before {
     align-items: center;
     justify-content: space-between;
     width: 100%;
+    color: var(--white);
+)
 }
 
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
-    color: var(--white);
     text-decoration: none;
 }
 
