@@ -48,9 +48,9 @@ body::before {
 
 /* Container principal */
 .main-wrapper {
-    width: 100%;
+    min-width: 100%;
     margin: 0 auto;
-    padding: 1.5em;
+    padding: 1em;
     background: white;
     border: 3px solid #ea0029;
     border-radius: 25px;
