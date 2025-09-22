@@ -2,7 +2,7 @@
 :root {
     /* Couleurs principales */
     --primary-color: #ea0029;
-    --secondary-color: #764ba2;
+    --secondary-color: #ba0404;
     --accent-color: #f39c12;
     --accent-hover: #e67e22;
     
@@ -15,8 +15,8 @@
     /* Couleurs de fond */
     --bg-white: #ffffff;
     --bg-light: #f5f7fa;
-    --bg-card: #c3cfe2;
-    --bg-example: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    --bg-card: #c1c4c9;
+    --bg-example: linear-gradient(135deg, #84868a 0%, #545557 100%);
     --bg-tip: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
     
     /* Couleurs d'état */
