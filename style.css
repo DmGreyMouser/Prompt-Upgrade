@@ -51,7 +51,7 @@ body::before {
     max-width: calc(100% - 80px);
     margin: 0 auto;
     background: white;
-    border: 3px solid #ea0029;
+    border: 3px solid #000;
     border-radius: 25px;
     overflow: hidden;
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
