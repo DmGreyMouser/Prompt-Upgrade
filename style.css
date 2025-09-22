@@ -48,7 +48,7 @@ body::before {
 
 /* Container principal */
 .main-wrapper {
-    max-width: calc(100% - 80px);
+    max-width: calc(100% - 20px);
     margin: 0 auto;
     background: white;
     border: 3px solid #ea0029;
