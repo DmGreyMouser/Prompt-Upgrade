@@ -107,13 +107,13 @@ body {
 .hero h1 {
     font-size: 2.5rem;
     font-weight: 900;
-    color: var(--black);  /* Changer en noir pour lisibilité */
+    color: var(--white);  /* Changer en blanc pour lisibilité */
     margin-bottom: 1rem;
 }
 
 .hero p {
     font-size: 1.125rem;
-    color: var(--gray-700);  /* Changer en gris foncé pour lisibilité */
+    color: var(--white);  /* Changer en blanc pour lisibilité */
     max-width: 100%;
     margin: 0 auto;
 }
