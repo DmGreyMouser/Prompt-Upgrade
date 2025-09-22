@@ -48,6 +48,18 @@ body {
     box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
 }
 
+/* Fond rouge pour les marges latérales */
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #ea0029;
+    z-index: -1;
+}
+
 /* Header moderne */
 .header {
     background: white;
@@ -88,7 +100,7 @@ body {
 
 /* Layout principal */
 .container {
-    max-width: 1200px;
+    max-width: 50%;
     margin: 0 auto;
     padding: 2rem 1.5rem;
 }
@@ -115,11 +127,23 @@ body {
     margin: 0 auto;
 }
 
-/* Layout en grid moderne */
+/* Nouveau layout empilé */
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Section questions en 2 colonnes */
+.questions-section {
+    width: 100%;
+}
+
+/* Layout en grid moderne pour les questions */
 .main-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
     align-items: start;
 }
 
@@ -280,15 +304,15 @@ body {
     transform: translateY(0);
 }
 
-/* Panel de droite - Résultat */
+/* Panel de droite - Résultat (maintenant en bas) */
 .result-panel {
     background: white;
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     border: 1px solid var(--gray-200);
     overflow: hidden;
-    position: sticky;
-    top: 6rem;
+    width: 100%;
+    margin-top: 1rem;
 }
 
 .result-header {
@@ -358,13 +382,13 @@ body {
         max-width: calc(100% - 40px);
     }
     
+    .container {
+        max-width: 95%;
+    }
+    
     .main-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
-    }
-
-    .result-panel {
-        position: static;
     }
 
     .hero h1 {
