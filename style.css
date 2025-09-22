@@ -48,7 +48,7 @@ body::before {
 
 /* Container principal */
 .main-wrapper {
-    max-width: 100%;
+    width: 100%;
     margin: 0 auto;
     padding: 1.5em;
     background: white;
@@ -67,7 +67,7 @@ body::before {
 }
 
 .header-content {
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0 auto;
     padding: 0 1.5rem;
     display: flex;
@@ -131,7 +131,7 @@ body::before {
     display: flex;
     flex-direction: column;
     gap: 2rem;
-    max-width: calc(100% - 20px);
+    width: 100%;
 }
 
 /* Panel formulaire optimisé */
@@ -141,7 +141,7 @@ body::before {
     box-shadow: var(--shadow);
     border: 1px solid var(--gray-200);
     overflow: hidden;
-    min-width: 100%; !important
+    min-width: 100%;
     margin: 0 auto;
 }
 
