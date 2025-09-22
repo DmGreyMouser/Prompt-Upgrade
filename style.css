@@ -383,12 +383,21 @@ body::before {
     }
     
     .container {
-        max-width: 95%;
+        max-width: 90%;
     }
     
     .main-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    /* Stack les colonnes sur mobile */
+    .form-content > div[style*="grid-template-columns"] {
+        display: block !important;
+    }
+    
+    .form-content > div[style*="grid-template-columns"] > div {
+        margin-bottom: 1.5rem;
     }
 
     .hero h1 {
