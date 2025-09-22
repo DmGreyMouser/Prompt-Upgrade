@@ -38,18 +38,6 @@ body {
     padding: 40px;
 }
 
-/* Fond rouge pour les marges latérales 
-body::before {
-    content: '';
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background: #ea0029;
-    z-index: -1;
-} */
-
 /* Container principal */
 .main-wrapper {
     max-width: 80%;
@@ -82,10 +70,12 @@ body::before {
 )
 }
 
+/* Logo */
 .logo {
     font-size: 1.5rem;
     font-weight: 800;
     text-decoration: none;
+    color: var(--white);
 }
 
 .logo:hover {
