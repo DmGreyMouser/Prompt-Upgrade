@@ -1,3 +1,63 @@
+/* 🎨 VARIABLES DE COULEURS UNIVERSELLES */
+:root {
+    /* Couleurs principales */
+    --primary-color: #667eea;
+    --secondary-color: #764ba2;
+    --accent-color: #f39c12;
+    --accent-hover: #e67e22;
+    
+    /* Couleurs de texte */
+    --text-primary: #2c3e50;
+    --text-secondary: #7f8c8d;
+    --text-light: #8b4513;
+    --text-white: #ffffff;
+    
+    /* Couleurs de fond */
+    --bg-white: #ffffff;
+    --bg-light: #f5f7fa;
+    --bg-card: #c3cfe2;
+    --bg-example: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    --bg-tip: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    
+    /* Couleurs d'état */
+    --border-color: #ecf0f1;
+    --shadow-light: rgba(0, 0, 0, 0.1);
+    --shadow-medium: rgba(0, 0, 0, 0.15);
+    --shadow-heavy: rgba(0, 0, 0, 0.2);
+    
+    /* Transparences */
+    --white-transparent: rgba(255, 255, 255, 0.95);
+    --white-semi: rgba(255, 255, 255, 0.7);
+    --white-light: rgba(255, 255, 255, 0.2);
+    --white-subtle: rgba(255, 255, 255, 0.1);
+    --white-hover: rgba(255, 255, 255, 0.5);
+}
+
+/* 🌙 THÈME SOMBRE (optionnel - décommente pour l'activer) */
+/*
+[data-theme="dark"] {
+    --primary-color: #4c63d2;
+    --secondary-color: #667eea;
+    --accent-color: #f1c40f;
+    --accent-hover: #f39c12;
+    
+    --text-primary: #ecf0f1;
+    --text-secondary: #bdc3c7;
+    --text-light: #95a5a6;
+    --text-white: #2c3e50;
+    
+    --bg-white: #34495e;
+    --bg-light: #2c3e50;
+    --bg-card: #34495e;
+    --bg-example: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+    --bg-tip: linear-gradient(135deg, #34495e 0%, #2c3e50 100%);
+    
+    --border-color: #4a5f7a;
+    --white-transparent: rgba(52, 73, 94, 0.95);
+    --white-semi: rgba(52, 73, 94, 0.7);
+}
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -7,7 +67,7 @@
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     line-height: 1.6;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     min-height: 100vh;
     padding: 20px;
 }
@@ -15,10 +75,10 @@ body {
 .container {
     max-width: 1200px;
     margin: 0 auto;
-    background: rgba(255, 255, 255, 0.95);
+    background: var(--white-transparent);
     border-radius: 20px;
     padding: 30px;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 60px var(--shadow-heavy);
 }
 
 header {
@@ -27,10 +87,10 @@ header {
 }
 
 h1 {
-    color: #2c3e50;
+    color: var(--text-primary);
     font-size: 3em;
     margin-bottom: 10px;
-    background: linear-gradient(135deg, #667eea, #764ba2);
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -38,7 +98,7 @@ h1 {
 
 .subtitle {
     font-size: 1.2em;
-    color: #7f8c8d;
+    color: var(--text-secondary);
     margin-bottom: 20px;
 }
 
@@ -48,8 +108,8 @@ h1 {
 
 .github-link a {
     display: inline-block;
-    background: linear-gradient(135deg, #667eea, #764ba2);
-    color: white;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: var(--text-white);
     padding: 12px 25px;
     text-decoration: none;
     border-radius: 25px;
@@ -59,7 +119,7 @@ h1 {
 
 .github-link a:hover {
     transform: translateY(-3px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 25px var(--shadow-heavy);
 }
 
 .framework-grid {
@@ -70,10 +130,10 @@ h1 {
 }
 
 .framework-card {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-card) 100%);
     border-radius: 15px;
     padding: 25px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 10px 30px var(--shadow-light);
     transition: all 0.3s ease;
     cursor: pointer;
     border: 2px solid transparent;
@@ -81,14 +141,14 @@ h1 {
 
 .framework-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
-    border-color: #667eea;
+    box-shadow: 0 15px 40px var(--shadow-medium);
+    border-color: var(--primary-color);
 }
 
 .framework-card.active {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    border-color: #4c63d2;
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--text-white);
+    border-color: var(--primary-color);
     transform: translateY(-5px);
 }
 
@@ -96,13 +156,13 @@ h1 {
     font-size: 1.4em;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #2c3e50;
+    color: var(--text-primary);
     display: flex;
     align-items: center;
 }
 
 .framework-card.active .framework-title {
-    color: white;
+    color: var(--text-white);
 }
 
 .icon {
@@ -116,19 +176,19 @@ h1 {
 }
 
 .framework-steps li {
-    background: rgba(255, 255, 255, 0.7);
+    background: var(--white-semi);
     margin: 8px 0;
     padding: 12px 15px;
     border-radius: 8px;
-    border-left: 4px solid #667eea;
+    border-left: 4px solid var(--primary-color);
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
 .framework-card.active .framework-steps li {
-    background: rgba(255, 255, 255, 0.2);
-    border-left-color: white;
-    color: white;
+    background: var(--white-light);
+    border-left-color: var(--text-white);
+    color: var(--text-white);
 }
 
 .framework-steps li:hover {
@@ -138,7 +198,7 @@ h1 {
 .example-section {
     margin-top: 40px;
     padding: 25px;
-    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    background: var(--bg-example);
     border-radius: 15px;
     display: none;
     animation: fadeIn 0.5s ease;
@@ -163,26 +223,26 @@ h1 {
     font-size: 1.3em;
     font-weight: bold;
     margin-bottom: 15px;
-    color: #2c3e50;
+    color: var(--text-primary);
 }
 
 .example-content {
-    background: white;
+    background: var(--bg-white);
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 5px 15px var(--shadow-light);
     font-family: 'Courier New', monospace;
     line-height: 1.8;
     white-space: pre-wrap;
-    border-left: 5px solid #667eea;
+    border-left: 5px solid var(--primary-color);
 }
 
 .interactive-prompt {
     margin-top: 40px;
     padding: 30px;
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     border-radius: 15px;
-    color: white;
+    color: var(--text-white);
 }
 
 .interactive-prompt h3 {
@@ -191,7 +251,7 @@ h1 {
 }
 
 .prompt-builder {
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--white-subtle);
     padding: 25px;
     border-radius: 15px;
     margin-top: 15px;
@@ -210,13 +270,13 @@ h1 {
 
 .prompt-input:focus {
     outline: none;
-    background: white;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+    background: var(--bg-white);
+    box-shadow: 0 0 15px var(--white-hover);
 }
 
 .prompt-output {
     background: rgba(255, 255, 255, 0.9);
-    color: #2c3e50;
+    color: var(--text-primary);
     padding: 20px;
     border-radius: 10px;
     margin-top: 15px;
@@ -224,12 +284,12 @@ h1 {
     line-height: 1.6;
     min-height: 100px;
     white-space: pre-wrap;
-    border-left: 5px solid #f39c12;
+    border-left: 5px solid var(--accent-color);
 }
 
 button {
-    background: linear-gradient(135deg, #f39c12, #e67e22);
-    color: white;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-hover));
+    color: var(--text-white);
     border: none;
     padding: 15px 30px;
     border-radius: 10px;
@@ -241,28 +301,28 @@ button {
 }
 
 button:hover {
-    background: linear-gradient(135deg, #e67e22, #d35400);
+    background: linear-gradient(135deg, var(--accent-hover), #d35400);
     transform: translateY(-2px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 20px var(--shadow-heavy);
 }
 
 .tip-box {
-    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    background: var(--bg-tip);
     padding: 25px;
     border-radius: 15px;
     margin-top: 30px;
-    border-left: 5px solid #f39c12;
+    border-left: 5px solid var(--accent-color);
 }
 
 .tip-title {
     font-weight: bold;
-    color: #e67e22;
+    color: var(--accent-hover);
     margin-bottom: 15px;
     font-size: 1.2em;
 }
 
 .tip-box p {
-    color: #8b4513;
+    color: var(--text-light);
     line-height: 2;
 }
 
@@ -270,12 +330,12 @@ footer {
     margin-top: 50px;
     text-align: center;
     padding-top: 30px;
-    border-top: 2px solid #ecf0f1;
-    color: #7f8c8d;
+    border-top: 2px solid var(--border-color);
+    color: var(--text-secondary);
 }
 
 footer a {
-    color: #667eea;
+    color: var(--primary-color);
     text-decoration: none;
     font-weight: bold;
 }
