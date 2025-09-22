@@ -1,1 +1,12 @@
+/* Container principal */
+.main-wrapper {
+    max-width: 80%;
+    margin: 0 auto;
+    /* ... tes styles de layout */
+}
 
+.container {
+    max-width: 100%;
+    width: 100%;
+    /* ... */
+}
