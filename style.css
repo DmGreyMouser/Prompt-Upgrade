@@ -106,6 +106,7 @@ body::before {
 .hero {
     text-align: center;
     margin-bottom: 3rem;
+    width: 100%;
 }
 
 .hero h1 {
