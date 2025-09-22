@@ -34,7 +34,7 @@ body {
     padding: 40px;
 }
 
-/* Fond rouge pour les marges latérales */
+/* Fond rouge pour les marges latérales 
 body::before {
     content: '';
     position: fixed;
@@ -44,7 +44,7 @@ body::before {
     bottom: 0;
     background: #ea0029;
     z-index: -1;
-}
+} */
 
 /* Container principal */
 .main-wrapper {
