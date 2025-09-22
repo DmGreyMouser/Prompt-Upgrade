@@ -1,0 +1,83 @@
+{
+  "proprietes": [
+    {
+      "type": "Unifamiliale",
+      "genres": [
+        {
+          "genre": "Maison de plein-pied",
+          "sous_genres": ["Isolé (détaché)", "Jumelé", "En rangée", "En rangée sur coin", "Quadrex"]
+        },
+        { "genre": "Maison à étages" },
+        { "genre": "Maison à paliers multiples" },
+        { "genre": "Maison à un étage et demi" },
+        { "genre": "Maison mobile" }
+      ],
+      "champs": {
+        "localisation": ["Région", "Municipalité / Arrondissement", "Quartier", "Rue", "N° début", "N° fin", "Appartement/No/Bureau", "Code postal"],
+        "batiment": ["Année de construction", "Particularité de la construction", "Zonage"],
+        "pieces": ["Nombre de pièces", "Nombre total de chambres (hors-sol, sous-sol, total)", "Nombre de salles de bains", "Nombre de salles d’eau"],
+        "autres": ["Espace additionnel", "Caractéristiques (voir enfants)"]
+      },
+      "caracteristiques": {
+        "systeme_egouts": ["Municipalité", "Fosse septique", "Champ d’épuration", "Autre"],
+        "approvisionnement_eau": ["Aqueduc privé", "Municipalité", "Puits artésien", "Citerne", "Autre"],
+        "garage_abri_auto": ["Attaché", "Intégré", "Détaché", "Simple largeur", "Double largeur ou plus", "Tandem"],
+        "stationnement": ["Allée", "Abri d’auto", "Garage", "Nombre de places"],
+        "sous_sol": ["6 pieds et plus", "Totalement aménagé", "Partiellement aménagé", "Non aménagé", "Vide sanitaire", "Entrée extérieure"],
+        "vue": ["Panoramique", "Sur la montagne", "Sur la ville", "Sur l’eau"],
+        "piscine": ["Hors terre", "Creusée", "Intérieure", "Chauffée"],
+        "adaptation": ["Cuisine adaptée", "Rampe d’accès", "Salle de bains adaptée", "Monte-escalier", "Plateforme élévatrice"],
+        "renovations": ["Chauffage", "Fenestration", "Plancher", "Salle de bains", "Revêtement toiture", "Isolation", "Électricité", "Plomberie"],
+        "commodites": ["Climatiseur mural", "Thermopompe centrale", "Échangeur d’air", "Système d’alarme", "Sauna", "Espace de rangement"],
+        "energie": ["Électricité", "Gaz naturel", "Mazout", "Bois", "Propane", "Géothermie", "Énergie solaire"],
+        "revêtement": ["Brique", "Pierre", "Vinyle", "Aluminium", "Bois", "Fibre pressée", "Autre"],
+        "toiture": ["Bardeaux d’asphalte", "Tôle", "Membrane élastomère", "Bitume et gravier"],
+        "foyer_poele": ["Foyer au bois", "Foyer au gaz", "Poêle aux granules", "Autre"]
+      }
+    },
+    {
+      "type": "Plex (immeubles à revenus)",
+      "genres": [
+        { "genre": "Duplex" },
+        { "genre": "Triplex" },
+        { "genre": "Quadruplex" },
+        { "genre": "5 logements et plus" }
+      ],
+      "champs": {
+        "localisation": ["Région", "Municipalité / Arrondissement", "Quartier", "Rue", "N° début", "N° fin", "Code postal"],
+        "batiment": ["Année de construction", "Particularité de la construction", "Zonage"],
+        "pieces": ["Nombre de logements", "Nombre de pièces par logement", "Nombre de chambres", "Nombre de salles de bains", "Nombre de salles d’eau"],
+        "revenus": ["Loyer mensuel", "Valeur locative", "Fin de bail", "Revenus supplémentaires"]
+      },
+      "caracteristiques": {
+        "stationnement": ["Allée", "Garage", "Abri d’auto", "Nombre de places"],
+        "energie": ["Électricité", "Gaz naturel", "Mazout"],
+        "commodites": ["Internet", "Semi-meublé", "Meublé", "Déneigement inclus"]
+      }
+    },
+    {
+      "type": "Ferme/Fermette",
+      "genres": [
+        { "genre": "Ferme" },
+        { "genre": "Fermette" }
+      ],
+      "champs": {
+        "localisation": ["Région", "Municipalité / Arrondissement", "Quartier", "Rue", "N° début", "N° fin", "Code postal"],
+        "batiment": ["Année de construction", "Dimensions résidence principale", "Dimensions terrain", "Superficie habitable", "Particularité de la construction", "Zonage"],
+        "pieces": ["Nombre total de pièces", "Nombre de chambres", "Nombre de salles de bains", "Nombre de salles d’eau"],
+        "exploitation": ["Animaux", "Animaux et culture", "Culture", "Équipement/Machinerie", "Genre de culture"]
+      },
+      "caracteristiques": {
+        "systeme_egouts": ["Fosse septique", "Champ d’épuration", "Municipalité", "Autre"],
+        "approvisionnement_eau": ["Aqueduc privé", "Puits artésien", "Citerne", "Captage de source", "Municipalité"],
+        "garage_abri_auto": ["Attaché", "Détaché", "Abri d’auto", "Double largeur ou plus"],
+        "terrain": ["Boisé", "Clôturé", "Terre cultivable", "Paysager"],
+        "vue": ["Panoramique", "Sur l’eau", "Sur la montagne", "Sur la ville"]
+      }
+    }
+  ],
+  "champs_transversaux": {
+    "zonage": ["Résidentiel", "Commercial", "Industriel", "Agricole", "Forestier", "Récréotouristique", "Villégiature", "Autre"],
+    "particularites_site": ["Coin de rue", "Cul-de-sac", "Villégiature/Chalet", "Accès saisonnier", "Aucun voisin à l’arrière"]
+  }
+}
