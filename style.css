@@ -134,7 +134,7 @@ body::before {
     gap: 2rem;
 }
 
-/* Section questions en 2 colonnes */
+/* Section questions empilées */
 .questions-section {
     width: 100%;
 }
@@ -388,17 +388,22 @@ body::before {
         max-width: 90%;
     }
     
+    .form-panel,
+    .result-panel {
+        width: 95% !important;
+    }
+    
     .main-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
     }
 
-    /* Stack les colonnes sur mobile */
-    .form-content > div[style*="grid-template-columns"] {
+    /* Stack les 3 colonnes sur mobile */
+    .form-content > div[style*="grid-template-columns: 1fr 1fr 1fr"] {
         display: block !important;
     }
     
-    .form-content > div[style*="grid-template-columns"] > div {
+    .form-content > div[style*="grid-template-columns: 1fr 1fr 1fr"] > div {
         margin-bottom: 1.5rem;
     }
 
@@ -407,7 +412,7 @@ body::before {
     }
 
     .toggle-group {
-        grid-template-columns: 1fr;
+        grid-template-columns: 1fr !important;
     }
 }
 
