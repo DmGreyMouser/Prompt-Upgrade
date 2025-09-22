@@ -23,161 +23,152 @@
             </div>
 
             <div class="main-layout">
-                <!-- Section questions empilées -->
-                <div class="questions-section">
-                    <div class="main-grid">
-                        <!-- Panel unique pour toutes les questions -->
-                        <div class="form-panel">
-                            <div class="form-header">
-                                <h2>Détails de la propriété</h2>
-                                <p>Remplissez les informations pour générer une description optimisée</p>
-                            </div>
-                            
-                            <div class="form-content">
-                                <!-- Grid 2 colonnes à l'intérieur du panel -->
-                                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-bottom: 2rem;">
-                                    <!-- Colonne gauche -->
-                                    <div>
-                                        <!-- Informations de base -->
-                                        <div class="field-group">
-                                            <div class="group-title">📋 Informations de base</div>
-                                            
-                                            <div class="input-group">
-                                                <label class="input-label">Type de propriété *</label>
-                                                <select class="input select" id="property-type" required>
-                                                    <option value="">Sélectionnez le type</option>
-                                                    <option value="maison unifamiliale">Maison unifamiliale</option>
-                                                    <option value="condo">Condo/Appartement</option>
-                                                    <option value="duplex">Duplex/Triplex</option>
-                                                    <option value="maison de ville">Maison de ville</option>
-                                                    <option value="terrain">Terrain</option>
-                                                    <option value="commercial">Commercial</option>
-                                                    <option value="chalet">Chalet/Résidence secondaire</option>
-                                                </select>
-                                            </div>
-
-                                            <div class="input-group">
-                                                <label class="input-label">Description courte *</label>
-                                                <textarea class="input textarea" id="description" placeholder="Ex: Magnifique propriété récemment rénovée avec vue sur le fleuve..." required></textarea>
-                                            </div>
-                                        </div>
-
-                                        <!-- Localisation -->
-                                        <div class="field-group">
-                                            <div class="group-title">📍 Localisation</div>
-                                            
-                                            <div class="input-group">
-                                                <label class="input-label">Ville *</label>
-                                                <input type="text" class="input" id="city" placeholder="Ex: Montréal" required>
-                                            </div>
-
-                                            <div class="input-group">
-                                                <label class="input-label">Quartier/Secteur *</label>
-                                                <input type="text" class="input" id="neighborhood" placeholder="Ex: Plateau Mont-Royal" required>
-                                            </div>
-                                        </div>
+                <!-- Section formulaire -->
+                <div class="form-panel">
+                    <div class="form-header">
+                        <h2>Détails de la propriété</h2>
+                        <p>Remplissez les informations pour générer une description optimisée</p>
+                    </div>
+                    
+                    <div class="form-content">
+                        <!-- Grid 3 colonnes -->
+                        <div class="form-grid">
+                            <!-- Colonne 1: Informations de base -->
+                            <div class="form-column">
+                                <div class="field-group">
+                                    <div class="group-title">📋 Informations de base</div>
+                                    
+                                    <div class="input-group">
+                                        <label class="input-label">Type de propriété *</label>
+                                        <select class="input select" id="property-type" required>
+                                            <option value="">Sélectionnez le type</option>
+                                            <option value="maison unifamiliale">Maison unifamiliale</option>
+                                            <option value="condo">Condo/Appartement</option>
+                                            <option value="duplex">Duplex/Triplex</option>
+                                            <option value="maison de ville">Maison de ville</option>
+                                            <option value="terrain">Terrain</option>
+                                            <option value="commercial">Commercial</option>
+                                            <option value="chalet">Chalet/Résidence secondaire</option>
+                                        </select>
                                     </div>
 
-                                    <!-- Colonne droite -->
-                                    <div>
-                                        <!-- Détails techniques -->
-                                        <div class="field-group">
-                                            <div class="group-title">🏠 Détails techniques</div>
-                                            
-                                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
-                                                <div class="input-group">
-                                                    <label class="input-label">Chambres</label>
-                                                    <input type="number" class="input" id="bedrooms" placeholder="3" min="0">
-                                                </div>
-                                                <div class="input-group">
-                                                    <label class="input-label">Salles de bain</label>
-                                                    <input type="number" class="input" id="bathrooms" placeholder="2" min="0" step="0.5">
-                                                </div>
-                                            </div>
-
-                                            <div class="input-group">
-                                                <label class="input-label">Superficie (pi²)</label>
-                                                <input type="number" class="input" id="surface" placeholder="1500">
-                                            </div>
-
-                                            <div class="input-group optional">
-                                                <label class="input-label">Prix ($)</label>
-                                                <input type="number" class="input" id="price" placeholder="425000">
-                                            </div>
-                                        </div>
-
-                                        <!-- Caractéristiques spéciales -->
-                                        <div class="field-group">
-                                            <div class="group-title">✨ Points forts</div>
-                                            
-                                            <div class="input-group">
-                                                <label class="input-label">Caractéristiques spéciales</label>
-                                                <textarea class="input" id="features" placeholder="Ex: Cuisine rénovée, foyer au bois, garage double..."></textarea>
-                                            </div>
-
-                                            <div class="input-group">
-                                                <label class="input-label">Proximité/Transport</label>
-                                                <input type="text" class="input" id="proximity" placeholder="Ex: Près du métro, écoles primaires">
-                                            </div>
-                                        </div>
+                                    <div class="input-group">
+                                        <label class="input-label">Description courte *</label>
+                                        <textarea class="input textarea" id="description" placeholder="Ex: Magnifique propriété récemment rénovée avec vue sur le fleuve..." required></textarea>
                                     </div>
                                 </div>
 
-                                <!-- Section marketing pleine largeur -->
+                                <div class="field-group">
+                                    <div class="group-title">📍 Localisation</div>
+                                    
+                                    <div class="input-group">
+                                        <label class="input-label">Ville *</label>
+                                        <input type="text" class="input" id="city" placeholder="Ex: Montréal" required>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label class="input-label">Quartier/Secteur *</label>
+                                        <input type="text" class="input" id="neighborhood" placeholder="Ex: Plateau Mont-Royal" required>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Colonne 2: Détails techniques -->
+                            <div class="form-column">
+                                <div class="field-group">
+                                    <div class="group-title">🏠 Détails techniques</div>
+                                    
+                                    <div class="input-group">
+                                        <label class="input-label">Chambres</label>
+                                        <input type="number" class="input" id="bedrooms" placeholder="3" min="0">
+                                    </div>
+                                    
+                                    <div class="input-group">
+                                        <label class="input-label">Salles de bain</label>
+                                        <input type="number" class="input" id="bathrooms" placeholder="2" min="0" step="0.5">
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label class="input-label">Superficie (pi²)</label>
+                                        <input type="number" class="input" id="surface" placeholder="1500">
+                                    </div>
+
+                                    <div class="input-group optional">
+                                        <label class="input-label">Prix ($)</label>
+                                        <input type="number" class="input" id="price" placeholder="425000">
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Colonne 3: Points forts et Marketing -->
+                            <div class="form-column">
+                                <div class="field-group">
+                                    <div class="group-title">✨ Points forts</div>
+                                    
+                                    <div class="input-group">
+                                        <label class="input-label">Caractéristiques spéciales</label>
+                                        <textarea class="input" id="features" placeholder="Ex: Cuisine rénovée, foyer au bois, garage double..."></textarea>
+                                    </div>
+
+                                    <div class="input-group">
+                                        <label class="input-label">Proximité/Transport</label>
+                                        <input type="text" class="input" id="proximity" placeholder="Ex: Près du métro, écoles primaires">
+                                    </div>
+                                </div>
+
                                 <div class="field-group">
                                     <div class="group-title">🎯 Marketing</div>
                                     
-                                    <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
-                                        <div class="input-group">
-                                            <label class="input-label">Ton de la description</label>
-                                            <div class="toggle-group" style="grid-template-columns: 1fr;">
-                                                <div class="toggle-option">
-                                                    <input type="radio" name="tone" value="professionnel" id="tone-pro" checked>
-                                                    <label class="toggle-label" for="tone-pro">Professionnel</label>
-                                                </div>
-                                                <div class="toggle-option">
-                                                    <input type="radio" name="tone" value="vendeur" id="tone-sales">
-                                                    <label class="toggle-label" for="tone-sales">Vendeur</label>
-                                                </div>
-                                                <div class="toggle-option">
-                                                    <input type="radio" name="tone" value="accueillant" id="tone-warm">
-                                                    <label class="toggle-label" for="tone-warm">Accueillant</label>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div class="input-group">
+                                        <label class="input-label">Public cible</label>
+                                        <select class="input select" id="target-audience">
+                                            <option value="">Sélectionnez le public</option>
+                                            <option value="famille">Famille</option>
+                                            <option value="jeune couple">Jeune couple</option>
+                                            <option value="investisseur">Investisseur</option>
+                                            <option value="premier acheteur">Premier acheteur</option>
+                                            <option value="retraité">Retraité</option>
+                                            <option value="professionnel">Professionnel</option>
+                                        </select>
+                                    </div>
 
-                                        <div class="input-group">
-                                            <label class="input-label">Public cible</label>
-                                            <select class="input select" id="target-audience">
-                                                <option value="">Sélectionnez le public</option>
-                                                <option value="famille">Famille</option>
-                                                <option value="jeune couple">Jeune couple</option>
-                                                <option value="investisseur">Investisseur</option>
-                                                <option value="premier acheteur">Premier acheteur</option>
-                                                <option value="retraité">Retraité</option>
-                                                <option value="professionnel">Professionnel</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="input-group optional">
-                                            <label class="input-label">URL Centris</label>
-                                            <input type="url" class="input" id="centris-url" placeholder="https://www.centris.ca/...">
-                                        </div>
+                                    <div class="input-group optional">
+                                        <label class="input-label">URL Centris</label>
+                                        <input type="url" class="input" id="centris-url" placeholder="https://www.centris.ca/...">
                                     </div>
                                 </div>
+                            </div>
+                        </div>
 
-                                <!-- Bouton génération -->
-                                <div style="text-align: center;">
-                                    <button class="generate-btn" onclick="generateDescription()" style="max-width: 300px;">
-                                        🚀 Générer la Description
-                                    </button>
+                        <!-- Section ton pleine largeur -->
+                        <div class="tone-section">
+                            <div class="group-title">🎵 Ton de la description</div>
+                            <div class="tone-options">
+                                <div class="toggle-option">
+                                    <input type="radio" name="tone" value="professionnel" id="tone-pro" checked>
+                                    <label class="toggle-label" for="tone-pro">Professionnel</label>
+                                </div>
+                                <div class="toggle-option">
+                                    <input type="radio" name="tone" value="vendeur" id="tone-sales">
+                                    <label class="toggle-label" for="tone-sales">Vendeur</label>
+                                </div>
+                                <div class="toggle-option">
+                                    <input type="radio" name="tone" value="accueillant" id="tone-warm">
+                                    <label class="toggle-label" for="tone-warm">Accueillant</label>
                                 </div>
                             </div>
+                        </div>
+
+                        <!-- Bouton de génération -->
+                        <div class="generate-section">
+                            <button class="generate-btn" onclick="generateDescription()">
+                                🚀 Générer la Description
+                            </button>
                         </div>
                     </div>
                 </div>
 
-                <!-- Section résultat en bas, pleine largeur -->
+                <!-- Section résultat -->
                 <div class="result-panel">
                     <div class="result-header">
                         <h2>Description générée</h2>
@@ -188,7 +179,7 @@
                     
                     <div class="result-content">
                         <div class="result-placeholder" id="placeholder">
-                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor" style="margin-bottom: 1rem;">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8l-6-6z"/>
                                 <polyline points="14,2 14,8 20,8"/>
                                 <line x1="16" y1="13" x2="8" y2="13"/>
