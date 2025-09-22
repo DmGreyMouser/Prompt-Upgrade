@@ -1,0 +1,337 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 3em;
+    margin-bottom: 10px;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+}
+
+.github-link {
+    margin-top: 20px;
+}
+
+.github-link a {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.github-link a:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.framework-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    margin-bottom: 30px;
+}
+
+.framework-card {
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    border-radius: 15px;
+    padding: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+
+.framework-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+    border-color: #667eea;
+}
+
+.framework-card.active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border-color: #4c63d2;
+    transform: translateY(-5px);
+}
+
+.framework-title {
+    font-size: 1.4em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+}
+
+.framework-card.active .framework-title {
+    color: white;
+}
+
+.icon {
+    font-size: 1.5em;
+    margin-right: 10px;
+}
+
+.framework-steps {
+    list-style: none;
+    padding: 0;
+}
+
+.framework-steps li {
+    background: rgba(255, 255, 255, 0.7);
+    margin: 8px 0;
+    padding: 12px 15px;
+    border-radius: 8px;
+    border-left: 4px solid #667eea;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.framework-card.active .framework-steps li {
+    background: rgba(255, 255, 255, 0.2);
+    border-left-color: white;
+    color: white;
+}
+
+.framework-steps li:hover {
+    transform: translateX(5px);
+}
+
+.example-section {
+    margin-top: 40px;
+    padding: 25px;
+    background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+    border-radius: 15px;
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.example-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: translateY(20px); 
+    }
+    to { 
+        opacity: 1; 
+        transform: translateY(0); 
+    }
+}
+
+.example-title {
+    font-size: 1.3em;
+    font-weight: bold;
+    margin-bottom: 15px;
+    color: #2c3e50;
+}
+
+.example-content {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Courier New', monospace;
+    line-height: 1.8;
+    white-space: pre-wrap;
+    border-left: 5px solid #667eea;
+}
+
+.interactive-prompt {
+    margin-top: 40px;
+    padding: 30px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 15px;
+    color: white;
+}
+
+.interactive-prompt h3 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.prompt-builder {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 15px;
+}
+
+.prompt-input {
+    width: 100%;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    margin: 12px 0;
+    font-size: 1.1em;
+    background: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
+}
+
+.prompt-input:focus {
+    outline: none;
+    background: white;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
+}
+
+.prompt-output {
+    background: rgba(255, 255, 255, 0.9);
+    color: #2c3e50;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 15px;
+    font-family: 'Courier New', monospace;
+    line-height: 1.6;
+    min-height: 100px;
+    white-space: pre-wrap;
+    border-left: 5px solid #f39c12;
+}
+
+button {
+    background: linear-gradient(135deg, #f39c12, #e67e22);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin: 10px 10px 10px 0;
+}
+
+button:hover {
+    background: linear-gradient(135deg, #e67e22, #d35400);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.tip-box {
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    padding: 25px;
+    border-radius: 15px;
+    margin-top: 30px;
+    border-left: 5px solid #f39c12;
+}
+
+.tip-title {
+    font-weight: bold;
+    color: #e67e22;
+    margin-bottom: 15px;
+    font-size: 1.2em;
+}
+
+.tip-box p {
+    color: #8b4513;
+    line-height: 2;
+}
+
+footer {
+    margin-top: 50px;
+    text-align: center;
+    padding-top: 30px;
+    border-top: 2px solid #ecf0f1;
+    color: #7f8c8d;
+}
+
+footer a {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        padding: 20px;
+        margin: 10px;
+    }
+    
+    h1 {
+        font-size: 2.2em;
+    }
+    
+    .framework-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .framework-card {
+        padding: 20px;
+    }
+    
+    .interactive-prompt {
+        padding: 20px;
+    }
+    
+    .prompt-builder {
+        padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+    
+    .container {
+        padding: 15px;
+    }
+    
+    h1 {
+        font-size: 1.8em;
+    }
+    
+    .framework-title {
+        font-size: 1.2em;
+    }
+    
+    .framework-steps li {
+        padding: 10px;
+        font-size: 0.9em;
+    }
+}
