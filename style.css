@@ -154,7 +154,6 @@ body::before {
     box-shadow: var(--shadow);
     border: 1px solid var(--gray-200);
     overflow: hidden;
-    width: 90%;
     margin: 0 auto;
 }
 
