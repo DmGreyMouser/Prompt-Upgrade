@@ -1,0 +1,212 @@
+### 2. Créer index.html
+Crée un nouveau fichier `index.html` avec ce contenu :
+```html
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prompt-Upgrade - Guide Interactif pour Prompts AI</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Guide interactif avec 6 cadres de narration pour créer des prompts AI efficaces">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎯</text></svg>">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Prompt-Upgrade</h1>
+            <p class="subtitle">Guide Interactif pour Prompts AI Efficaces</p>
+            <div class="github-link">
+                <a href="https://github.com/DmGreyMouser/Prompt-Upgrade" target="_blank">⭐ GitHub</a>
+            </div>
+        </header>
+        
+        <div class="framework-grid">
+            <div class="framework-card" onclick="selectFramework('context')" id="context-card">
+                <div class="framework-title">
+                    <span class="icon">🎯</span>
+                    CONTEXT (Cadre de Base)
+                </div>
+                <ul class="framework-steps">
+                    <li><strong>C</strong>ontexte : Qui es-tu ? Quel est le contexte ?</li>
+                    <li><strong>O</strong>bjectif : Que veux-tu accomplir ?</li>
+                    <li><strong>N</strong>iveau : Quel niveau de détail ?</li>
+                    <li><strong>T</strong>one : Quel ton adopter ?</li>
+                    <li><strong>E</strong>xemples : Donne des exemples si besoin</li>
+                    <li><strong>X</strong>tra : Contraintes ou précisions</li>
+                    <li><strong>T</strong>âche : Action finale claire</li>
+                </ul>
+            </div>
+            
+            <div class="framework-card" onclick="selectFramework('star')" id="star-card">
+                <div class="framework-title">
+                    <span class="icon">⭐</span>
+                    STAR (Situation-Action)
+                </div>
+                <ul class="framework-steps">
+                    <li><strong>S</strong>ituation : Décris le contexte actuel</li>
+                    <li><strong>T</strong>âche : Définis la tâche précise</li>
+                    <li><strong>A</strong>ction : Quelle action veux-tu ?</li>
+                    <li><strong>R</strong>ésultat : Quel résultat attendu ?</li>
+                </ul>
+            </div>
+            
+            <div class="framework-card" onclick="selectFramework('clear')" id="clear-card">
+                <div class="framework-title">
+                    <span class="icon">💡</span>
+                    CLEAR (Clarté Maximum)
+                </div>
+                <ul class="framework-steps">
+                    <li><strong>C</strong>larifier : Énonce clairement le problème</li>
+                    <li><strong>L</strong>imiter : Définis les limites/contraintes</li>
+                    <li><strong>E</strong>xemples : Fournis des exemples concrets</li>
+                    <li><strong>A</strong>ction : Décris l'action attendue</li>
+                    <li><strong>R</strong>ésultat : Spécifie le format de sortie</li>
+                </ul>
+            </div>
+            
+            <div class="framework-card" onclick="selectFramework('creative')" id="creative-card">
+                <div class="framework-title">
+                    <span class="icon">🎨</span>
+                    CREATE (Créativité)
+                </div>
+                <ul class="framework-steps">
+                    <li><strong>C</strong>réativité : Niveau de créativité souhaité</li>
+                    <li><strong>R</strong>estrictions : Limites ou guidelines</li>
+                    <li><strong>E</strong>xploration : Domaines à explorer</li>
+                    <li><strong>A</strong>udience : Public cible</li>
+                    <li><strong>T</strong>ype : Type de contenu désiré</li>
+                    <li><strong>E</strong>valuation : Critères de réussite</li>
+                </ul>
+            </div>
+            
+            <div class="framework-card" onclick="selectFramework('problem')" id="problem-card">
+                <div class="framework-title">
+                    <span class="icon">🔧</span>
+                    SOLVE (Résolution de Problèmes)
+                </div>
+                <ul class="framework-steps">
+                    <li><strong>S</strong>ituation : État actuel du problème</li>
+                    <li><strong>O</strong>bstacles : Difficultés rencontrées</li>
+                    <li><strong>L</strong>ogique : Approche logique souhaitée</li>
+                    <li><strong>V</strong>ariables : Facteurs à considérer</li>
+                    <li><strong>E</strong>xécution : Plan d'action demandé</li>
+                </ul>
+            </div>
+            
+            <div class="framework-card" onclick="selectFramework('learn')" id="learn-card">
+                <div class="framework-title">
+                    <span class="icon">📚</span>
+                    LEARN (Apprentissage)
+                </div>
+                <ul class="framework-steps">
+                    <li><strong>L</strong>evel : Niveau de connaissance actuel</li>
+                    <li><strong>E</strong>xplain : Que veux-tu apprendre ?</li>
+                    <li><strong>A</strong>pproach : Méthode d'apprentissage</li>
+                    <li><strong>R</strong>elevance : Pertinence/application</li>
+                    <li><strong>N</strong>ext : Prochaines étapes</li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Sections d'exemples -->
+        <div id="context-example" class="example-section">
+            <div class="example-title">📝 Exemple avec CONTEXT :</div>
+            <div class="example-content">C - Contexte : Je suis étudiant en marketing digital
+O - Objectif : Créer une stratégie de contenu pour Instagram
+N - Niveau : Guide détaillé avec étapes concrètes
+T - Tone : Professionnel mais accessible
+E - Exemples : Inclure 3 exemples de posts types
+X - Extra : Budget limité, audience 18-35 ans
+T - Tâche : Rédige un plan de contenu sur 30 jours</div>
+        </div>
+        
+        <div id="star-example" class="example-section">
+            <div class="example-title">📝 Exemple avec STAR :</div>
+            <div class="example-content">S - Situation : Mon site e-commerce a un taux de conversion de 1,2%
+T - Tâche : Améliorer le taux de conversion
+A - Action : Analyse les pages produits et propose 5 améliorations
+R - Résultat : Liste priorisée avec impact estimé pour chaque amélioration</div>
+        </div>
+        
+        <div id="clear-example" class="example-section">
+            <div class="example-title">📝 Exemple avec CLEAR :</div>
+            <div class="example-content">C - Clarifier : Je veux améliorer mes présentations PowerPoint
+L - Limiter : Présentations business, 10-15 slides maximum
+E - Exemples : Inclure 2 templates de slides différents
+A - Action : Crée un guide de bonnes pratiques
+R - Résultat : Document PDF avec checklist et templates</div>
+        </div>
+        
+        <div id="creative-example" class="example-section">
+            <div class="example-title">📝 Exemple avec CREATE :</div>
+            <div class="example-content">C - Créativité : Très créatif, sortir des sentiers battus
+R - Restrictions : Respecter l'identité de marque, rester professionnel
+E - Exploration : Marketing viral, storytelling, expériences interactives
+A - Audience : Millennials tech-savvy, urbains
+T - Type : Campagne publicitaire multi-canal
+E - Évaluation : Originalité, mémorabilité, faisabilité</div>
+        </div>
+        
+        <div id="problem-example" class="example-section">
+            <div class="example-title">📝 Exemple avec SOLVE :</div>
+            <div class="example-content">S - Situation : Équipe remote avec problèmes de communication
+O - Obstacles : Fuseaux horaires, outils dispersés, manque de clarté
+L - Logique : Approche systémique et progressive
+V - Variables : Taille équipe (8 personnes), budget, outils existants
+E - Exécution : Plan d'action sur 3 mois avec métriques de suivi</div>
+        </div>
+        
+        <div id="learn-example" class="example-section">
+            <div class="example-title">📝 Exemple avec LEARN :</div>
+            <div class="example-content">L - Level : Débutant en Python, bases de programmation OK
+E - Explain : Apprendre l'analyse de données avec pandas
+A - Approach : Apprentissage pratique avec projets concrets
+R - Relevance : Pour analyser mes données de ventes e-commerce
+N - Next : Après pandas, passer à la visualisation avec matplotlib</div>
+        </div>
+        
+        <div class="interactive-prompt">
+            <h3>🚀 Générateur de Prompt Interactif</h3>
+            <div class="prompt-builder">
+                <select id="framework-select" class="prompt-input">
+                    <option value="">Choisis un framework...</option>
+                    <option value="context">CONTEXT</option>
+                    <option value="star">STAR</option>
+                    <option value="clear">CLEAR</option>
+                    <option value="creative">CREATE</option>
+                    <option value="problem">SOLVE</option>
+                    <option value="learn">LEARN</option>
+                </select>
+                
+                <input type="text" id="topic-input" class="prompt-input" placeholder="Sujet de ton prompt...">
+                <input type="text" id="goal-input" class="prompt-input" placeholder="Objectif principal...">
+                <input type="text" id="context-input" class="prompt-input" placeholder="Contexte/Situation...">
+                
+                <button onclick="generatePrompt()">Générer le Prompt</button>
+                <button onclick="copyPrompt()" id="copy-btn" style="display:none;">📋 Copier</button>
+                
+                <div id="generated-prompt" class="prompt-output">
+                    Ton prompt généré apparaîtra ici...
+                </div>
+            </div>
+        </div>
+        
+        <div class="tip-box">
+            <div class="tip-title">💡 Conseils pour des Prompts Efficaces :</div>
+            <p><strong>• Sois spécifique :</strong> Plus tu es précis, meilleure sera la réponse<br>
+            <strong>• Utilise des exemples :</strong> Montre ce que tu veux obtenir<br>
+            <strong>• Définis le format :</strong> Liste, paragraphe, tableau, etc.<br>
+            <strong>• Indique le niveau :</strong> Expert, débutant, intermédiaire<br>
+            <strong>• Précise le ton :</strong> Formel, casual, technique, créatif</p>
+        </div>
+
+        <footer>
+            <p>Créé avec ❤️ pour améliorer la communication avec l'IA</p>
+            <p><a href="https://github.com/DmGreyMouser/Prompt-Upgrade" target="_blank">Contribuer sur GitHub</a></p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
