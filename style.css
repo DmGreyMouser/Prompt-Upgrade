@@ -66,7 +66,6 @@ body {
     align-items: center;
     justify-content: space-between;
     width: 100%;
-    color: var(--white);
 }
 
 /* Logo */
@@ -78,7 +77,7 @@ body {
 }
 
 .logo:hover {
-    color: var(--succes);
+    color: var(--success);  /* Corriger "succes" en "success" */
 }
 
 .badge {
@@ -108,13 +107,13 @@ body {
 .hero h1 {
     font-size: 2.5rem;
     font-weight: 900;
-    color: var(--white);
+    color: var(--black);  /* Changer en noir pour lisibilité */
     margin-bottom: 1rem;
 }
 
 .hero p {
     font-size: 1.125rem;
-    color: var(--white);
+    color: var(--gray-700);  /* Changer en gris foncé pour lisibilité */
     max-width: 100%;
     margin: 0 auto;
 }
