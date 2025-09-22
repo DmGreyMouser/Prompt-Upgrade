@@ -154,6 +154,8 @@ body::before {
     box-shadow: var(--shadow);
     border: 1px solid var(--gray-200);
     overflow: hidden;
+    width: 90%;
+    margin: 0 auto;
 }
 
 .form-header {
@@ -311,8 +313,8 @@ body::before {
     box-shadow: var(--shadow);
     border: 1px solid var(--gray-200);
     overflow: hidden;
-    width: 100%;
-    margin-top: 1rem;
+    width: 90%;
+    margin: 1rem auto 0;
 }
 
 .result-header {
@@ -383,12 +385,21 @@ body::before {
     }
     
     .container {
-        max-width: 95%;
+        max-width: 90%;
     }
     
     .main-grid {
         grid-template-columns: 1fr;
         gap: 1.5rem;
+    }
+
+    /* Stack les colonnes sur mobile */
+    .form-content > div[style*="grid-template-columns"] {
+        display: block !important;
+    }
+    
+    .form-content > div[style*="grid-template-columns"] > div {
+        margin-bottom: 1.5rem;
     }
 
     .hero h1 {
